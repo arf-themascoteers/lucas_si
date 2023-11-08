@@ -10,9 +10,9 @@ class ANNSimple(nn.Module):
         self.y_column = y_column
 
         self.linear1 = nn.Sequential(
-            nn.Linear(input_size, 3),
+            nn.Linear(input_size, 30),
             nn.LeakyReLU(),
-            nn.Linear(3, 1)
+            nn.Linear(30, 1)
         )
 
     def forward(self, x):
