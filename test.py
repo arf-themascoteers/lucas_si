@@ -7,5 +7,5 @@ if __name__ == "__main__":
         spec_utils.get_wavelengths() + ["savi"],
     ]
 
-    c = Evaluator(prefix="t2", folds=10, algorithms=["ann_savi_only","ann_savi"], column_groups=column_groups)
+    c = Evaluator(prefix="t", folds=10, algorithms=["ann_simple"], column_groups=column_groups)
     c.process()
