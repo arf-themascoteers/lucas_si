@@ -19,13 +19,13 @@ class ANNVanilla:
         self.train_dataset = SpectralDataset(train_x, train_y)
         self.test_dataset = SpectralDataset(test_x, test_y)
         self.validation_dataset = SpectralDataset(validation_x, validation_y)
-        self.epochs = 300
+        self.epochs = 1000
         self.batch_size = 1000
 
     def train(self):
         self.model.train()
         optimizer = torch.optim.Adam(self.model.parameters(), lr=0.01, weight_decay=0.001)
-        criterion = torch.nn.MSELoss(reduction='sum')
+        criterion = torch.nn.MSELoss(reduction='mean')
         n_batches = int(self.train_dataset.size()/self.batch_size) + 1
         batch_number = 0
         loss = None
